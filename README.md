@@ -21,7 +21,7 @@ A Python utility that converts your project files into a format suitable for Lar
 ### Basic Usage
 
 ```bash
-python script.py /path/to/your/project
+python main.py /path/to/your/project
 ```
 
 This will create a `prompts.txt` file in your current directory with the default settings.
@@ -29,7 +29,7 @@ This will create a `prompts.txt` file in your current directory with the default
 ### Advanced Usage
 
 ```bash
-python script.py /path/to/your/project \
+python main.py /path/to/your/project \
     --extensions .py .js .tsx \
     --exclude .git __pycache__ build \
     --output custom_prompt.txt
