@@ -19,6 +19,8 @@ DEFAULT_EXCLUDES = {
     "*.pyd",
     ".DS_Store",
     "Thumbs.db",
+    ".pytest_cache",
+    "*.egg-info",
 }
 
 
@@ -92,6 +94,10 @@ def process_directory(
             continue
 
         if file_path.is_file():
+            # Skip empty files
+            if os.path.getsize(file_path) == 0:
+                continue
+            
             # Check if file extension matches
             if file_path.suffix.lower() in extensions_set:
                 try:
